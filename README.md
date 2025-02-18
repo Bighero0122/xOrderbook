@@ -16,18 +16,6 @@
     - [Postgres](#postgres)
     - [bitcoind (Bitcoin Core)](#bitcoind-bitcoin-core)
     - [bitcoind-grpc-proxy](#bitcoind-grpc-proxy)
-- [FAQ](#faq)
-  - [What is the license?](#what-is-the-license)
-  - [Do I have permission to run this?](#do-i-have-permission-to-run-this)
-  - [Why did you write this?](#why-did-you-write-this)
-- [Author](#author)
-- [Screenshots](#screenshots)
-  - [Landing Page](#landing-page)
-  - [Sign-In Page](#sign-in-page)
-  - [Sign-Up Page](#sign-up-page)
-  - [Consumer Dashboard Page](#consumer-dashboard-page)
-  - [Admin Page](#admin-page)
-  - [Trading Dashboard Page](#trading-dashboard-page)
 
 <!-- on my browser from here you have to scroll down -->
 
@@ -83,10 +71,6 @@ regtest network instead of the testnet.
 
 disable or comment out `testnet=1` in `etc/bitcoind/bitcoin.conf` and set `regtest=1` instead.
 
-## Accessing the exchange
-
-Assuming you are using docker to run nginx the website should be available `http://localhost:3000/` you can take a look at the [screenshots](#screenshots) to know what to expect.
-
 # [Service Architecture](#table-of-contents)
 
 The following services can be found in the `docker-compose.yml` file:
@@ -122,56 +106,6 @@ The best way to interact with the Bitcoin network is to run a full node. It will
 ### bitcoind-grpc-proxy
 
 The currently existing jsonrpc and bitcoin rpc crates are difficult to use and not fully featured. The bitcoin core code itself is a type of C/C++ I can not navigate very well. So I wrote a grpc proxy to expose a well-typed interface to the exchange service while dealing with the bitcoin core jsonrpc interactions in a separate process.
-
-# [FAQ](#table-of-contents)
-
-## What is the license?
-
-The software is distributed under a Limited Use License Agreement, which grants you a non-exclusive, non-transferable, limited right to access and use the software for educational purposes only. This includes viewing, studying, and manually copying code snippets for personal educational use in non-commercial settings. Any electronic reproduction or reintegration of the code into other software is prohibited without prior written consent. The software may not be used, copied, modified, merged, published, distributed, sublicensed, or sold for any commercial purposes.
-
-It is a pretty restrictive license but that's just to deter anyone that wants to come and exploit source-available code for commercial use to make a quick buck. Please do not feel unwelcomed to rifle through the code out of curiosity or if you have questions to reach out or start a discussion.
-
-## Do I have permission to run this?
-
-Yes, you have permission to run the software on your personal device for educational purposes only. This means you can use the software to learn and understand the coding practices and techniques employed.
-However, you are not allowed to use the software for any commercial activities, nor can you modify or distribute the software in any form, whether modified or original.
-
-## Why did you write this?
-
-I wanted to see if I could put one together end-to-end for fun. It is shared publicly to showcase the capabilities and design decisions involved in building a full-stack crypto exchange.
-The project is intended to be used as an educational tool to help others understand and gain insights into software development and engineering practices in this specific domain.
-
-# [Author](#table-of-contents)
-
-Any questions about the project should use GitHub discussions.
-
-`mentalfoss@gmail.com`
-
-# [Screenshots](#table-of-contents)
-
-## [Landing Page](#table-of-contents)
-
-![landing-page](./screenshots/landing-page.jpeg)
-
-## [Sign-In Page](#table-of-contents)
-
-![Sign-In Page](./screenshots/sign-in-page.jpeg)
-
-## [Sign-Up Page](#table-of-contents)
-
-![Sign-Up Page](./screenshots/sign-up-page.jpeg)
-
-## [Consumer Dashboard Page](#table-of-contents)
-
-![Consumer Dashboard Page](./screenshots/consumer-dashboard-page.jpeg)
-
-## [Admin Page](#table-of-contents)
-
-![Admin Page](./screenshots/admin-page.jpeg)
-
-## [Trading Dashboard Page](#table-of-contents)
-
-![Trading Dashboard Page](./screenshots/trading-dashboard-page.jpeg)
 
 
 [tinyvec]: https://docs.rs/tinyvec
